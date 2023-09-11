@@ -64,6 +64,7 @@ db.transaction(function(transaction){
 	"item VARCHAR(100) NOT NULL,"+
 	"quantity INT(5) NOT NULL)";
 	transaction.executeSql(sql,undefined,function(){
+        loadData();
 		alert("Table is created successfully");
 	},function(){
 		alert("Table is already being created");
@@ -81,6 +82,7 @@ document.getElementById("remove").addEventListener("click", function(){
         var sql = "DROP TABLE items";
         transaction.executeSql(sql,undefined,
         function(){
+            loadData();
             alert("Table is deleted succesfully")
 
         }, function(){
